@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Solutions - AWS & Cloudflare Experts</title>
+    <title>Cloud Solutions - Comprehensive IT Consultancy in Kenya</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        /* Modern Reset and Base Styles */
+        /* Root Variables */
         :root {
             --primary-color: #0b5ed7;
             --secondary-color: #4a90e2;
@@ -15,6 +15,7 @@
             --white: #ffffff;
         }
 
+        /* Modern Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -139,6 +140,7 @@
             border-radius: 10px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            cursor: pointer;
         }
 
         .service-card:hover {
@@ -150,6 +152,57 @@
             font-size: 3rem;
             color: var(--primary-color);
             margin-bottom: 20px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+            padding-top: 50px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 700px;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .close-modal {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .modal-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .modal-services-grid ul {
+            list-style-type: disc;
+            padding-left: 20px;
         }
 
         /* About Section */
@@ -232,6 +285,10 @@
             nav {
                 margin-top: 20px;
             }
+
+            .modal-services-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -263,26 +320,109 @@
     <!-- Services Section -->
     <section id="services">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 50px;">Our Specialized Cloud Services</h2>
+            <h2 style="text-align: center; margin-bottom: 50px;">Our Specialized IT Consultancy Services</h2>
             <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <h3>AWS Cloud Migration</h3>
-                    <p>Seamless transition to AWS with zero downtime. We handle the complexity so you can focus on growth.</p>
+                <div class="service-card" onclick="openModal('strategyModal')">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>IT Strategy & Digital Transformation</h3>
+                    <p>Comprehensive technology roadmapping and digital evolution strategies</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="openModal('securityModal')">
                     <i class="fas fa-shield-alt"></i>
-                    <h3>Cloudflare Optimization</h3>
-                    <p>Enhance website performance, security, and global reach with advanced CDN and protection tools.</p>
+                    <h3>Cybersecurity Solutions</h3>
+                    <p>Advanced protection and risk management for your digital assets</p>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Cloud Infrastructure Management</h3>
-                    <p>24/7 monitoring, cost optimization, and performance tuning for your cloud infrastructure.</p>
+                <div class="service-card" onclick="openModal('cloudModal')">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud & Infrastructure Services</h3>
+                    <p>End-to-end cloud migration and management solutions</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Service Modals -->
+    <div id="strategyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('strategyModal')">&times;</span>
+            <h2>IT Strategy & Digital Transformation</h2>
+            <div class="modal-services-grid">
+                <div>
+                    <h3>Strategic Planning</h3>
+                    <ul>
+                        <li>IT Roadmap Development</li>
+                        <li>Digital Transformation Consulting</li>
+                        <li>Technology Assessments</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Key Benefits</h3>
+                    <ul>
+                        <li>Long-term technology vision</li>
+                        <li>Optimized technology investments</li>
+                        <li>Competitive digital advantage</li>
+                    </ul>
+                </div>
+            </div>
+            <p>We help Kenyan businesses navigate complex technological landscapes, ensuring your IT strategy aligns perfectly with your business goals.</p>
+        </div>
+    </div>
+
+    <div id="securityModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('securityModal')">&times;</span>
+            <h2>Comprehensive Cybersecurity Solutions</h2>
+            <div class="modal-services-grid">
+                <div>
+                    <h3>Security Services</h3>
+                    <ul>
+                        <li>Risk Assessments</li>
+                        <li>Data Protection</li>
+                        <li>Incident Response</li>
+                        <li>Advanced Firewall Solutions</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Protection Levels</h3>
+                    <ul>
+                        <li>Network Security</li>
+                        <li>Data Encryption</li>
+                        <li>Compliance Management</li>
+                        <li>Threat Monitoring</li>
+                    </ul>
+                </div>
+            </div>
+            <p>Safeguard your business with our cutting-edge cybersecurity solutions, designed to protect against evolving digital threats.</p>
+        </div>
+    </div>
+
+    <div id="cloudModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('cloudModal')">&times;</span>
+            <h2>Cloud & Infrastructure Services</h2>
+            <div class="modal-services-grid">
+                <div>
+                    <h3>Cloud Solutions</h3>
+                    <ul>
+                        <li>Cloud Migration</li>
+                        <li>AWS/Azure Management</li>
+                        <li>Hybrid Cloud Strategies</li>
+                        <li>SaaS/PaaS Implementation</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Infrastructure Benefits</h3>
+                    <ul>
+                        <li>Scalable Architecture</li>
+                        <li>Cost Optimization</li>
+                        <li>Performance Enhancement</li>
+                        <li>Business Continuity</li>
+                    </ul>
+                </div>
+            </div>
+            <p>Transform your IT infrastructure with our expert cloud solutions, ensuring maximum efficiency, security, and scalability.</p>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section id="about">
@@ -320,22 +460,91 @@
         <p>&copy; 2024 Cloud Solutions Kenya. All Rights Reserved.</p>
     </footer>
 
+   
     <script>
-        document.getElementById('cloudForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your inquiry! We will contact you shortly.');
-            this.reset();
-        });
+    // Modal Functionality
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
 
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    // Close modal if clicked outside the modal content
+    window.onclick = function(event) {
+        const modals = document.getElementsByClassName('modal');
+        for (let modal of modals) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+
+    // Form Submission Handler
+    document.getElementById('cloudForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Collect form data
+        const name = this.querySelector('input[type="text"]').value;
+        const email = this.querySelector('input[type="email"]').value;
+        const phone = this.querySelector('input[type="tel"]').value;
+        const message = this.querySelector('textarea').value;
+
+        // Basic form validation
+        if (!name || !email || !message) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        // Create a thank you message
+        alert(`Thank you, ${name}! 
+
+We've received your consultation request:
+Email: ${email}
+Phone: ${phone || 'Not provided'}
+
+Our team will contact you shortly to discuss your cloud strategy.`);
+
+        // Reset the form
+        this.reset();
+    });
+
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
-    </script>
+    });
+
+    // Optional: Add some simple animations on page load
+    window.addEventListener('load', () => {
+        const heroContent = document.querySelector('.hero-content');
+        const serviceCards = document.querySelectorAll('.service-card');
+
+        heroContent.style.opacity = 0;
+        heroContent.style.transform = 'translateY(20px)';
+
+        setTimeout(() => {
+            heroContent.style.transition = 'all 1s ease';
+            heroContent.style.opacity = 1;
+            heroContent.style.transform = 'translateY(0)';
+        }, 300);
+
+        serviceCards.forEach((card, index) => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+
+            setTimeout(() => {
+                card.style.transition = 'all 0.8s ease';
+                card.style.opacity = 1;
+                card.style.transform = 'translateY(0)';
+            }, 500 * (index + 1));
+        });
+    });
+</script>
 </body>
 </html>
